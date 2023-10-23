@@ -10,9 +10,9 @@ flutter run
 
 ## 运行截图
 
-<img width="300" src="https://github.com/siwangqishiq/dear-imclient/blob/master/img/t1.png">
+<img width="300" src="https://github.com/siwangqishiq/dear-imclient/blob/main/img/t1.png">
 
-<img width="300" src="https://github.com/siwangqishiq/dear-imclient/blob/master/img/t2.png">
+<img width="300" src="https://github.com/siwangqishiq/dear-imclient/blob/main/img/t2.png">
 
-<img width="300" src="https://github.com/siwangqishiq/dear-imclient/blob/master/img/t3.png">
+<img width="300" src="https://github.com/siwangqishiq/dear-imclient/blob/main/img/t3.png">
 
