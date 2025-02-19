@@ -118,13 +118,22 @@ class MyInfoState extends State<MyInfoWidget> {
             const SizedBox(height: 80),
             Padding(
               padding: const EdgeInsets.fromLTRB(40, 8, 40, 40),
-              child: ElevatedButton(
-                onPressed: () => loginOut(),
-                child: const Text("退出登录"),
-                style: ElevatedButton.styleFrom(
-                    minimumSize: const Size.fromHeight(40),
-                    primary: Colors.redAccent),
-              ),
+              child:ElevatedButton(
+                onPressed:()=>loginOut(),
+                child:const Text("退出登录"),
+                style:ElevatedButton.styleFrom(
+                  minimumSize: const Size.fromHeight(40),
+                  backgroundColor: Colors.redAccent,
+                  foregroundColor: Colors.white
+                )
+              )
+              // child: ElevatedButton(
+              //   onPressed: () => loginOut(),
+              //   child: const Text("退出登录"),
+              //   style: ElevatedButton.styleFrom(
+              //       minimumSize: const Size.fromHeight(40),
+              //       primary: Colors.redAccent),
+              // ),
             )
           ],
         ),

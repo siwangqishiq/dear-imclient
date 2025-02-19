@@ -34,6 +34,11 @@ void main() async {
   runApp(
     MaterialApp(
       home: MyApp(),
+      theme: ThemeData(
+        appBarTheme:const AppBarTheme(
+          backgroundColor: Colors.green
+        )
+      ),
     )
   );
   // coreTestRun();
@@ -96,6 +101,12 @@ class MyApp extends StatelessWidget with WindowListener {
       theme: ThemeData(
         primarySwatch: ColorThemes.themeColor,
         fontFamily: "cn",
+        appBarTheme:const AppBarTheme(
+          backgroundColor: Colors.green,
+          iconTheme: IconThemeData(
+            color: Colors.white
+          )
+        )
       ),
       home: FutureBuilder(
         future: getUser(),

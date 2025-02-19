@@ -1,9 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:developer';
-import 'dart:ffi';
-import 'dart:io';
-import 'dart:math';
 
 import 'package:dearim/core/imcore.dart';
 import 'package:dearim/core/immessage.dart';
@@ -720,37 +716,37 @@ class InputPanelState extends State<InputPanelWidget> {
   ///
   /// linux使用系统自带的输入框
   ///
-  Widget textFieldForLinux(){
-    return TextField(
-      key: inputKey,
-      onSubmitted: (content) {
-        sendTextIMMsg(content.trim());
-      },
-      onTap: () {
-        _textFieldController.selection.copyWith();
-        if (_showEmojiGridPanel || _showMoreActionsVisible) {
-          setState(() {
-            _showEmojiGridPanel = false;
-            _showMoreActionsVisible = false;
-          });
-        }
-      },
-      showCursor: true,
-      focusNode: _inputFocusNode,
-      onChanged: (_text) => onInputTextChange(_text),
-      controller: _textFieldController,
-      maxLines: null,
-      textInputAction: TextInputAction.send,
-      decoration: const InputDecoration(
-        contentPadding: EdgeInsets.fromLTRB(10, 4, 10, 4),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(8),
-          ),
-        ),
-      ),
-    );
-  }
+  // Widget textFieldForLinux(){
+  //   return TextField(
+  //     key: inputKey,
+  //     onSubmitted: (content) {
+  //       sendTextIMMsg(content.trim());
+  //     },
+  //     onTap: () {
+  //       _textFieldController.selection.copyWith();
+  //       if (_showEmojiGridPanel || _showMoreActionsVisible) {
+  //         setState(() {
+  //           _showEmojiGridPanel = false;
+  //           _showMoreActionsVisible = false;
+  //         });
+  //       }
+  //     },
+  //     showCursor: true,
+  //     focusNode: _inputFocusNode,
+  //     onChanged: (_text) => onInputTextChange(_text),
+  //     controller: _textFieldController,
+  //     maxLines: null,
+  //     textInputAction: TextInputAction.send,
+  //     decoration: const InputDecoration(
+  //       contentPadding: EdgeInsets.fromLTRB(10, 4, 10, 4),
+  //       border: OutlineInputBorder(
+  //         borderRadius: BorderRadius.all(
+  //           Radius.circular(8),
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 
   ///
   /// 文本输入框 支持表情emoji
@@ -848,10 +844,13 @@ class InputPanelState extends State<InputPanelWidget> {
             ),
             AnimatedContainer(
               duration: const Duration(milliseconds: 100),
-              width: _sendBtnVisible ? 60 : 0,
+              width: _sendBtnVisible ? 70 : 0,
               height: _sendBtnVisible ? 40 : 0,
-              child: ElevatedButton(
+              child: TextButton(
                 onPressed: () => sendTextIMMsg(text),
+                style:const ButtonStyle(
+                  backgroundColor: WidgetStatePropertyAll(Colors.green)
+                ),
                 child: const Text("发送", style: TextStyle(color: Colors.white)),
               ),
             ),

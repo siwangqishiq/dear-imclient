@@ -83,7 +83,7 @@ class AvChatPageState extends State<AvChatPage> {
         child: Stack(
           children: [
             Center(
-                child: SizedBox(
+              child: SizedBox(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               child: RTCVideoView(
